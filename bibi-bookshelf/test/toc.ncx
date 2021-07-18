@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="4cdafbff-cccf-465e-8173-d260a4d18fcb" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (3.2.0)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>WiFi Hacking for Beginners: Learn Hacking by Hacking WiFi networks (Penetration testing, Hacking, Wireless Networks)</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>Table of Contents</text>
+      </navLabel>
+      <content src="text/part0000_split_002.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>Setting up the lab</text>
+      </navLabel>
+      <content src="text/part0000_split_003.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_3" playOrder="3">
+      <navLabel>
+        <text>Hide identify, become untraceable</text>
+      </navLabel>
+      <content src="text/part0000_split_006.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="4">
+      <navLabel>
+        <text>Wireless modes</text>
+      </navLabel>
+      <content src="text/part0000_split_009.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_5" playOrder="5">
+      <navLabel>
+        <text>Catching handshake</text>
+      </navLabel>
+      <content src="text/part0000_split_012.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_6" playOrder="6">
+      <navLabel>
+        <text>Cracking any wireless network</text>
+      </navLabel>
+      <content src="text/part0000_split_015.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_7" playOrder="7">
+      <navLabel>
+        <text>Securing Your Network From The Above Attacks</text>
+      </navLabel>
+      <content src="text/part0000_split_018.html"/>
+    </navPoint>
+  </navMap>
+</ncx>

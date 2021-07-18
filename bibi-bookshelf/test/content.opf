@@ -1,0 +1,78 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+  <metadata xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dc:title>WiFi Hacking for Beginners: Learn Hacking by Hacking WiFi networks (Penetration testing, Hacking, Wireless Networks)</dc:title>
+    <dc:creator opf:role="aut" opf:file-as="Wells, James">James Wells</dc:creator>
+    <dc:date>2017-07-02T07:00:00+00:00</dc:date>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">4cdafbff-cccf-465e-8173-d260a4d18fcb</dc:identifier>
+    <dc:contributor opf:role="bkp">calibre (3.1.1) [https://calibre-ebook.com]</dc:contributor>
+    <dc:language>en</dc:language>
+    <dc:identifier opf:scheme="calibre">4cdafbff-cccf-465e-8173-d260a4d18fcb</dc:identifier>
+    <dc:identifier opf:scheme="MOBI-ASIN">B073PL9JF6</dc:identifier>
+    <meta name="calibre:title_sort" content="WiFi Hacking for Beginners: Learn Hacking by Hacking WiFi networks (Penetration testing, Hacking, Wireless Networks)"/>
+    <meta name="cover" content="cover"/>
+    <meta name="calibre:timestamp" content="2017-07-04T19:21:55.269000+00:00"/>
+    <meta content="horizontal-lr" name="primary-writing-mode"/>
+    <meta name="calibre:author_link_map" content="{&quot;James Wells&quot;: &quot;&quot;}"/>
+  </metadata>
+  <manifest>
+    <item href="titlepage.xhtml" id="titlepage" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_000.html" id="id920" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_001.html" id="id919" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_002.html" id="id918" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_003.html" id="id917" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_004.html" id="id916" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_005.html" id="id915" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_006.html" id="id914" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_007.html" id="id913" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_008.html" id="id912" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_009.html" id="id911" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_010.html" id="id910" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_011.html" id="id99" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_012.html" id="id98" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_013.html" id="id97" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_014.html" id="id96" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_015.html" id="id95" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_016.html" id="id94" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_017.html" id="id93" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_018.html" id="id92" media-type="application/xhtml+xml"/>
+    <item href="text/part0000_split_019.html" id="id91" media-type="application/xhtml+xml"/>
+    <item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="cover.jpeg" id="cover" media-type="image/jpeg"/>
+    <item href="images/00001.jpeg" id="id1" media-type="image/jpeg"/>
+    <item href="images/00002.jpeg" id="id2" media-type="image/jpeg"/>
+    <item href="images/00003.jpeg" id="id3" media-type="image/jpeg"/>
+    <item href="images/00004.jpeg" id="id4" media-type="image/jpeg"/>
+    <item href="images/00005.jpeg" id="id5" media-type="image/jpeg"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="titlepage"/>
+    <itemref idref="id920"/>
+    <itemref idref="id919"/>
+    <itemref idref="id918"/>
+    <itemref idref="id917"/>
+    <itemref idref="id916"/>
+    <itemref idref="id915"/>
+    <itemref idref="id914"/>
+    <itemref idref="id913"/>
+    <itemref idref="id912"/>
+    <itemref idref="id911"/>
+    <itemref idref="id910"/>
+    <itemref idref="id99"/>
+    <itemref idref="id98"/>
+    <itemref idref="id97"/>
+    <itemref idref="id96"/>
+    <itemref idref="id95"/>
+    <itemref idref="id94"/>
+    <itemref idref="id93"/>
+    <itemref idref="id92"/>
+    <itemref idref="id91"/>
+  </spine>
+  <guide>
+    <reference href="text/part0000_split_002.html#toc" title="Table of Contents" type="toc"/>
+    <reference href="text/part0000_split_002.html#18-a2fa5f29d9b84be1b758313a8301f26d" title="start" type="text"/>
+    <reference href="titlepage.xhtml" title="Cover" type="cover"/>
+  </guide>
+</package>

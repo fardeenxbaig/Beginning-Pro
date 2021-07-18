@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta name="generator" content="Amazon.com"/>
+    <title>Unknown</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link href="../stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="../page_styles.css" rel="stylesheet" type="text/css"/>
+</head>
+  <body class="calibre">
+<div class="calibre1">
+<h1 class="calibre2" id="calibre_pb_29"> <a class="calibre3" id="_Toc486846475"><span class="calibre4">Catching handshake</span></a> </h1> 
+   <p class="calibre12"> <span class="calibre6">Handshake packets are sent every time a client associates with the target AP. So to capture it we are going to capture every packets that are sent. In this chapter we are going to use program called “airodump-ng”. This program lets us to sniff and capture the packets that are sent over the network. This program is also preinstalled program. There are two step to catch handshake.</span> </p> 
+   <p class="calibre12"> <span class="calibre6">1.Start airodump-ng on the target AP (Access Point):</span> </p> 
+   <p class="calibre12"> <span class="calibre6">The syntax is something like this:</span> </p> 
+   <p class="calibre12"> <span class="calibre6">&gt;airodump-ng --channel [channel] –bssid [bssid] –write [file-name] [interface]</span> </p> 
+   <p class="calibre12"> <span class="calibre6">Ex: &gt;airodump-ng –channel 6 –bssid 11:22:33:44:55:66 --write out wlan0mon</span> </p> 
+   <p class="calibre12"> <span class="calibre6">2.Wait for a client to connect to the access point, or deauthenticate a connected client (if any) so that their system will connect back automatically.</span> </p> 
+   <p class="calibre12"> <span class="calibre6">The syntax is something like this:</span> </p> 
+   <p class="calibre12"> <span class="calibre6">&gt;aireplay-ng --deauth [number of deauth packets] –a [AP] –c [target] [interfac]</span> </p> 
+   <p class="calibre12"> <span class="calibre6">Ex: &gt;aireplay-ng –deauth 1000 –a 11:22:33:44:55:66 –c 00:AA:11:22:33 mon0</span> </p> 
+   <p class="calibre12"> <span class="calibre6">If the handshake catched, kali will inform you by top right corner of airodump-ng will say “WPA handshake”.</span> </p> 
+   <p class="calibre12"> <span class="calibre6">Follow these steps and when you will catch handshake your screen should like this:</span> </p> 
+   <p class="calibre5"> <div class="calibre8" id="calibre_pb_30"></div>
+</p> 
+   </div>  
+ </body></html>
