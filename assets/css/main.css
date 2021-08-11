@@ -1012,14 +1012,14 @@ input, select, textarea {
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		background-color: transparent;
-		border-radius: 6px;
+		border-radius: 9px;
 		border: 0;
 		box-shadow: inset 0 0 0 0px #ffffff;
 		color: #ffffff !important;
 		cursor: pointer;
 		display: inline-block;
-		font-size: 0.8rem;
-		font-weight: 300;
+		font-size: 0.95rem;
+		font-weight: 350;
 		height: 2.75rem;
 		letter-spacing: 0.2rem;
 		line-height: 2.75rem;
