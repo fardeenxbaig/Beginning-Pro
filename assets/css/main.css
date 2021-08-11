@@ -1013,7 +1013,7 @@ input, select, textarea {
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		background-color: transparent;
 		border-radius: 7px;
-		border: 0;
+		border: 1;
 		box-shadow: inset 0 0 0 2px #ffffff;
 		color: #ffffff !important;
 		cursor: pointer;
@@ -1024,7 +1024,7 @@ input, select, textarea {
 		letter-spacing: 0.3rem;
 		line-height: 2.75rem;
 		outline: 0;
-		padding: 0 1.10rem 0 1.15rem;
+		padding: 0 1.0rem 0 1.45rem;
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
