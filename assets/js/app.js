@@ -14,8 +14,8 @@ const coverArt = document.querySelector("#cover");
 const musicbox = document.querySelector("#musicbox");
 
 // control button images
-let playImg = "./assets/images/play.svg";
-let pauseImg = "./assets/images/pause.svg";
+let playImg = "./images/play.svg";
+let pauseImg = "./images/pause.svg";
 
 // default controls
 playPause.src = playImg;
@@ -23,8 +23,8 @@ let isPlaying = true;
 
 const songList = [
     {
-        name: "Travel Love Beats",
-        source: "./assets/music/Travel Love Beats.mp3",
+        name: "Juz 1",
+        source: "https://drive.google.com/file/d/1p-L7N0_XkEkMlF_Wyk4vbIhqGFgVXR2Y/view?usp=sharing",
         cover: "./images/chillhop.jpg"
     },
     {
