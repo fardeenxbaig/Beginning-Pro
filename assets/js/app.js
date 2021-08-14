@@ -25,7 +25,7 @@ const songList = [
     {
         name: "Travel Love Beats",
         source: "./assets/music/Travel Love Beats.mp3",
-        cover: "./assets/images/chillhop.jpg"
+        cover: "./images/chillhop.jpg"
     },
     {
         name: "Night Sky Unreated",
@@ -121,7 +121,7 @@ function playHandler() {
 }
 
 
-// player event 
+// player event
 playPause.addEventListener("click", playHandler);
 backward.addEventListener("click", backPlay);
 forward.addEventListener("click", nextPlay);
