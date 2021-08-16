@@ -1,129 +1,342 @@
-// media controllers
-const playPause = document.querySelector("#play-stop");
-const backward = document.querySelector("#backward");
-const forward = document.querySelector("#forward");
+// Select all the elements in the HTML page
+// and assign them to a variable
+let now_playing = document.querySelector(".now-playing");
+let track_art = document.querySelector(".track-art");
+let track_name = document.querySelector(".track-name");
+let track_artist = document.querySelector(".track-artist");
 
-// record player animation
-const circleBig = document.querySelector("#circle-bg");
-const circleSm = document.querySelector("#circle-sm");
+let playpause_btn = document.querySelector(".playpause-track");
+let next_btn = document.querySelector(".next-track");
+let prev_btn = document.querySelector(".prev-track");
 
-// playing song
-const songName = document.querySelector("#song-name");
-const audio = document.querySelector("#audio");
-const coverArt = document.querySelector("#cover");
-const musicbox = document.querySelector("#musicbox");
+let seek_slider = document.querySelector(".seek_slider");
+let volume_slider = document.querySelector(".volume_slider");
+let curr_time = document.querySelector(".current-time");
+let total_duration = document.querySelector(".total-duration");
 
-// control button images
-let playImg = "./images/play.svg";
-let pauseImg = "./images/pause.svg";
+// Specify globally used values
+let track_index = 0;
+let isPlaying = false;
+let updateTimer;
 
-// default controls
-playPause.src = playImg;
-let isPlaying = true;
+// Create the audio element for the player
+let curr_track = document.createElement('audio');
 
-const songList = [
-    {
-        name: "Juz 1",
-        source: "https://drive.google.com/file/d/1p-L7N0_XkEkMlF_Wyk4vbIhqGFgVXR2Y/view?usp=sharing",
-        cover: "./images/chillhop.jpg"
-    },
-    {
-        name: "Night Sky Unreated",
-        source: "./assets/music/Night Sky.mp3",
-        cover: "./assets/images/chillhop-2.jpg"
-    },
-    {
-        name: "Be a Music",
-        source: "./assets/music/Be a Music.mp3",
-        cover: "./assets/images/chillhop-3.jpg"
-    },
-    {
-        name: "Slow Day",
-        source: "./assets/music/Slow Day.mp3",
-        cover: "./assets/images/chillhop-4.jpg"
-    },
-    {
-        name: "Carti Mangolia",
-        source: "./assets/music/Carti mangolia.mp3",
-        cover: "./assets/images/chillhop-2.jpg"
-    }
+// Define the list of tracks that have to be played
+let track_list = [
+{
+	name: "Juz 1",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/1.mp3"
+},
+{
+	name: "Juz 2",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/2.mp3"
+},
+{
+	name: "Juz 3",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/3.mp3"
+},
+{
+	name: "Juz 4",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/4.mp3"
+},
+{
+	name: "Juz 5",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/5.mp3"
+},
+{
+	name: "Juz 6",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/6.mp3"
+},
+{
+	name: "Juz 7",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/7.mp3"
+},
+{
+	name: "Juz 8",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/8.mp3"
+},
+{
+	name: "Juz 9",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/9.mp3"
+},
+{
+	name: "Juz 10",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/10.mp3"
+},
+{
+	name: "Juz 11",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/11.mp3"
+},
+{
+	name: "Juz 12",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/12.mp3"
+},
+{
+	name: "Juz 13",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/13.mp3"
+},
+{
+	name: "Juz 14",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/14.mp3"
+},
+{
+	name: "Juz 15",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/15.mp3"
+},
+{
+	name: "Juz 16",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/16.mp3"
+},
+{
+	name: "Juz 17",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/17.mp3"
+},
+{
+	name: "Juz 18",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/18.mp3"
+},
+{
+	name: "Juz 19",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/19.mp3"
+},
+{
+	name: "Juz 20",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/20.mp3"
+},
+{
+	name: "Juz 21",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/21.mp3"
+},
+{
+	name: "Juz 22",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/22.mp3"
+},
+{
+	name: "Juz 23",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/23.mp3"
+},
+{
+	name: "Juz 24",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/24.mp3"
+},
+{
+	name: "Juz 25",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/25.mp3"
+},
+{
+	name: "Juz 26",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/26.mp3"
+},
+{
+	name: "Juz 27",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/27.mp3"
+},
+{
+	name: "Juz 28",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/28.mp3"
+},
+{
+	name: "Juz 29",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/29.mp3"
+},
+{
+	name: "Juz 30",
+	artist: "Al-Quran",
+	image: "./images/quran.jpg",
+	path: "./assets/music/30.mp3"
+},
+
 ];
-// helper function
-function createEle(ele) {
-    return document.createElement(ele);
-}
-function append(parent, child) {
-    return parent.append(child);
-}
-// creating track list
-const ul = createEle('ul')
-function createPlayList() {
-    songList.forEach((song) => {
-        let h3 = createEle('h3');
-        let li = createEle('li');
 
-        li.classList.add("track-item");
-        h3.innerText = song.name;
-        append(li,h3);
-        append(ul,li)
-    })
-    append(musicbox, ul);
-}
+function loadTrack(track_index) {
+// Clear the previous seek timer
+clearInterval(updateTimer);
+resetValues();
 
-let songIndex = 0;
-// preloaded song
-loadMusic(songList[songIndex]);
+// Load a new track
+curr_track.src = track_list[track_index].path;
+curr_track.load();
 
+// Update details of the track
+track_art.style.backgroundImage =
+	"url(" + track_list[track_index].image + ")";
+track_name.textContent = track_list[track_index].name;
+track_artist.textContent = track_list[track_index].artist;
+now_playing.textContent =
+	"Playing JUZ " + (track_index + 1) + " of " + track_list.length;
 
-function loadMusic() {
-    coverArt.src = songList[songIndex].cover;
-    songName.innerText = songList[songIndex].name;
-    audio.src = songList[songIndex].source;
-}
+// Set an interval of 1000 milliseconds
+// for updating the seek slider
+updateTimer = setInterval(seekUpdate, 1000);
 
-function playSong() {
-    playPause.src = pauseImg;
-    circleBig.classList.add("animate");
-    circleSm.classList.add("animate");
+// Move to the next track if the current finishes playing
+// using the 'ended' event
+curr_track.addEventListener("ended", nextTrack);
 
-    audio.play();
-}
+// Apply a random background color
 
-function pauseSong() {
-    playPause.src = playImg;
-    circleBig.classList.remove("animate");
-    circleSm.classList.remove("animate");
-
-    audio.pause();
-}
-
-function nextPlay() {
-    songIndex++;
-    if(songIndex > songList.length - 1) {
-        songIndex = 0;
-    }
-    loadMusic(songList[songIndex]);
-    playSong()
-}
-
-function backPlay() {
-    songIndex--;
-    if(songIndex < 0) {
-        songIndex = songList.length - 1;
-    }
-    loadMusic(songList[songIndex]);
-    playSong()
-}
-function playHandler() {
-    isPlaying = !isPlaying;
-    //console.log("Change: ",isPlaying)
-    isPlaying ? pauseSong() : playSong();
 }
 
 
-// player event
-playPause.addEventListener("click", playHandler);
-backward.addEventListener("click", backPlay);
-forward.addEventListener("click", nextPlay);
 
-createPlayList()
+// Function to reset all values to their default
+function resetValues() {
+curr_time.textContent = "00:00";
+total_duration.textContent = "00:00";
+seek_slider.value = 0;
+}
+
+function playpauseTrack() {
+// Switch between playing and pausing
+// depending on the current state
+if (!isPlaying) playTrack();
+else pauseTrack();
+}
+
+function playTrack() {
+// Play the loaded track
+curr_track.play();
+isPlaying = true;
+
+// Replace icon with the pause icon
+playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+}
+
+function pauseTrack() {
+// Pause the loaded track
+curr_track.pause();
+isPlaying = false;
+
+// Replace icon with the play icon
+playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
+}
+
+function nextTrack() {
+// Go back to the first track if the
+// current one is the last in the track list
+if (track_index < track_list.length - 1)
+	track_index += 1;
+else track_index = 0;
+
+// Load and play the new track
+loadTrack(track_index);
+playTrack();
+}
+
+function prevTrack() {
+// Go back to the last track if the
+// current one is the first in the track list
+if (track_index > 0)
+	track_index -= 1;
+else track_index = track_list.length - 1;
+
+// Load and play the new track
+loadTrack(track_index);
+playTrack();
+}
+
+
+function seekTo() {
+// Calculate the seek position by the
+// percentage of the seek slider
+// and get the relative duration to the track
+seekto = curr_track.duration * (seek_slider.value / 100);
+
+// Set the current track position to the calculated seek position
+curr_track.currentTime = seekto;
+}
+
+function setVolume() {
+// Set the volume according to the
+// percentage of the volume slider set
+curr_track.volume = volume_slider.value / 100;
+}
+
+function seekUpdate() {
+let seekPosition = 0;
+
+// Check if the current track duration is a legible number
+if (!isNaN(curr_track.duration)) {
+	seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+	seek_slider.value = seekPosition;
+
+	// Calculate the time left and the total duration
+	let currentMinutes = Math.floor(curr_track.currentTime / 60);
+	let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+	let durationMinutes = Math.floor(curr_track.duration / 60);
+	let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+
+	// Add a zero to the single digit time values
+	if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+	if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+	if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
+	if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+
+	// Display the updated duration
+	curr_time.textContent = currentMinutes + ":" + currentSeconds;
+	total_duration.textContent = durationMinutes + ":" + durationSeconds;
+}
+}
+
+
+// Load the first track in the tracklist
+loadTrack(track_index);

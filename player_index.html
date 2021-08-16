@@ -1,54 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quran in Audio</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <meta name = "keywords" content = "HTML, Javascript, CSS, Codeer, 100DayOfCode." />
-    <meta name = "description" content = "Music Player built with Vanilla Javascript." />
+  <title>Simple Music Player</title>
+  <!-- Load FontAwesome icons -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+  <link rel="stylesheet"
+        href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+  <!-- Load the custom CSS style file -->
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
-    <section id="home">
-        <div class="container">
-            <div class="collection">
-                <h1 class="heading">Quran Listeningp</h1>
-                <p class="lead">Chill-out is a loosely defined form of popular music characterized by slow tempos and
-                    relaxed moods. Identified as a modern type of easy listening.</p>
-                    <hr class="hor">
-                    <div id="musicbox" class="musicbox">
-                    <h2>Chillhop Playlist</h2>
-                </div>
-            </div>
+  <div class="player" style="background-image: image('./assets/bg.jpg');">
 
-            <div class="playbox">
-                <nav>
-                    <ul>
-                        <li class="nav-link"><a href="./page/about.html">About & Credits</a></li>
-                    </ul>
-                </nav>
-                <h1 class="heading">Zen Lofi Player</h1>
-                <div class="controller">
-                    <div id="circle-bg" class="circle">
-                        <div id="circle-sm" class="circle2"><img id="cover" src="" class="fluid-img"></div>
-                    </div>
-                    <div class="songs">
-                        <h2 id="song-name">Travel love Beats</h2>
-                        <div class="controls">
-                            <audio id="audio" src=""></audio>
-                            <img id="backward" class="media-btn" src="./images/backward-button.png">
-                            <img id="play-stop" class="media-btn">
-                            <img id="forward" class="media-btn" src="./images/fast-forward.png">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Define the section for displaying details -->
+    <div class="details" style="background-image: image('./assets/bg.jpg');">
+      <div class="now-playing">PLAYING Juz x OF y</div>
+      <div class="track-art"></div>
+      <div class="track-name">Track Name</div>
+      <div class="track-artist">Track Artist</div>
+    </div>
 
-    <script src="./assets/js/app.js" type="text/javascript"></script>
+    <!-- Define the section for displaying track buttons -->
+    <div class="buttons">
+      <div class="prev-track" onclick="prevTrack()">
+        <i class="fa fa-step-backward fa-2x"></i>
+      </div>
+      <div class="playpause-track" onclick="playpauseTrack()">
+        <i class="fa fa-play-circle fa-5x"></i>
+      </div>
+      <div class="next-track" onclick="nextTrack()">
+        <i class="fa fa-step-forward fa-2x"></i>
+      </div>
+    </div>
+
+    <!-- Define the section for displaying the seek slider-->
+    <div class="slider_container">
+      <div class="current-time">00:00</div>
+      <input type="range" min="1" max="100"
+        value="0" class="seek_slider" onchange="seekTo()">
+      <div class="total-duration">00:00</div>
+    </div>
+
+    <!-- Define the section for displaying the volume slider-->
+    <div class="slider_container">
+      <i class="fa fa-volume-down"></i>
+      <input type="range" min="1" max="100"
+        value="99" class="volume_slider" onchange="setVolume()">
+      <i class="fa fa-volume-up"></i>
+    </div>
+  </div>
+
+  <!-- Load the main script for the player -->
+  <script type="text/javascript" src="./assets/js/app.js"></script>
+
 </body>
-
 </html>

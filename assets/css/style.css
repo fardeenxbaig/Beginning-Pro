@@ -1,205 +1,142 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-:root {
-    --white-color: #ffffff;
-}
-body {
-    font-family: 'Josefin Sans', sans-serif;
-    width: 100%;
-      background-image: linear-gradient(
-          to right bottom, 
-          #118ab2, 
-          #0e92b9, 
-          #0b99c1, 
-          #07a1c8,
-          #03a9cf, 
-          #37b0d8,
-          #51b8e1, 
-          #66bfe9, 
-          #8cc7f2, 
-          #accff8,
-          #c7d8fc, 
-          #dee2ff
-    );
-}
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 1rem;
-}
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
-    color: var(--white-color);
-    margin: 1rem 0 1rem 0;
-}
-.heading {
-    font-size: 32px;
-}
-/* end common style */
 
-#home .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: row;
+body {
+  background-image: image("./images/bg.jpg");
+
+
+
 }
-.collection {
-    width: 50%;
-    flex: 1;
-    margin-top: 1.5rem;
+
+/* Using flex with the column direction to
+   align items in a vertical direction */
+.player {
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
 }
-.lead {
-    max-width: 600px;
-    font-weight: 400;
-    color: #15253a;
-    letter-spacing: 0.5px;
-    line-height: 1.2rem;
+
+.details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
 }
-.musicbox {
-    margin-top: 1rem;
+
+.track-art {
+  margin: 25px;
+  height: 250px;
+  width: 250px;
+  background-image: URL(
+     "https://source.unsplash.com/Qrspubmx6kE/640x360");
+  background-size: cover;
+  background-position: center;
+  border-radius: 15%;
 }
-.musicbox ul li h3{
-    color: #15253a;
-    font-weight: 400;
+
+/* Changing the font sizes to suitable ones */
+.now-playing {
+  font-size: 1rem;
 }
-.hor {
-    margin: 1rem 0 1rem 0;
-    max-width: 500px;
-    background-color: #c7d8fc;
+
+.track-name {
+  font-size: 3rem;
 }
-.playbox {
-    flex: 1;
-    margin: 0.5rem auto;
-    text-align: center;
-    border-radius: 8px;
-    background-color: #c7d8fc8c;
+
+.track-artist {
+  font-size: 1.5rem;
 }
-nav {
-    display: block;
-    margin: 3rem auto;
+
+/* Using flex with the row direction to
+   align items in a horizontal direction */
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-ul li{
-    list-style: none;
-    display: inline;
-    margin: 1rem;
-    padding: 1rem;
+
+.playpause-track,
+.prev-track,
+.next-track {
+  padding: 25px;
+  opacity: 0.8;
+
+  /* Smoothly transition the opacity */
+  transition: opacity .2s;
 }
-ul li a {
-    text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    color: var(--white-color);
-    transition: all 300ms;
+
+/* Change the opacity when mouse is hovered */
+.playpause-track:hover,
+.prev-track:hover,
+.next-track:hover {
+  opacity: 1.0;
 }
-ul li a:hover {
-    background-color: #c7d8fc8c;
+
+/* Define the slider width so that it scales properly */
+.slider_container {
+  width: 75%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.controller {
-    margin: 2.5rem auto;
-    width: 100%;
-    max-width: 400px;
-    min-height: 500px;
+
+/* Modify the appearance of the slider */
+.seek_slider, .volume_slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: black;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
 }
-.circle {
-    width: 250px;
-    height: 250px;
-    background-color: #222427;
-    border-radius: 50%;
-    margin: 2rem auto;
-    display: flex;
-    border: 3px solid #37b0d8;
-    border-top: 3px solid #0254ec;
-   
+
+/* Modify the appearance of the slider thumb */
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
 }
-.circle2 {
-    width: 180px;
-    height: 180px;
-    background-color: #252629;
-    border-radius: 50%;
-    border: 3px solid #282529;
-    border-top: 3px solid #66bfe9;
-    align-self: center;
-    display: flex;
-    margin: auto;
-    
+
+/* Change the opacity when mouse is hovered */
+.seek_slider:hover,
+.volume_slider:hover {
+  opacity: 1.0;
 }
-.circle2 .fluid-img{
-    width: 100%;
-    max-width: 160px;
-    height: auto;
-    border-radius: 50%;
-    align-self: center;
-    margin: auto;
+
+.seek_slider {
+  width: 60%;
 }
-#song-name{
-    color: #15253a;
-    font-weight: 400;
+
+.volume_slider {
+  width: 30%;
 }
-.circle.animate {
-    animation: anticlock 6s infinite linear;
+
+.current-time,
+.total-duration {
+  padding: 10px;
 }
-.circle2.animate {
-    animation: clockwise 6s infinite linear;
+
+i.fa-volume-down,
+i.fa-volume-up {
+  padding: 10px;
 }
-.media-btn {
-    width: 100%;
-    max-width: 50px;
-    height: auto;
-    margin: auto;
-    cursor: pointer;
-    margin: 1rem;
-}
-@keyframes anticlock {
-    from {
-        transform: rotate(360deg);
-    } to {
-        transform: rotate(0deg);
-    }
-}
-@keyframes clockwise {
-    from {
-        transform: rotate(0deg);
-    } to {
-        transform: rotate(360deg);
-    }
-}
-@media (max-width: 900px) {
-    #home .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-direction: column-reverse;
-    }
-    .collection {
-        width: 90%;
-        flex: 1;
-        margin: 1.5rem auto;
-    }
-    .playbox {
-        flex: 1;
-        width: 90%;
-    }
-}
-.card-body {
-    width: 100%;
-    max-width: 550px;
-    min-height: 100vh;
-    background-color: #c7d8fc8c;
-    margin: 1rem auto;
-    border-radius: 8px;
-}
-.card-body nav{
-    margin: 0;
-    padding-top: 2rem;
-    text-align: center;
-}
-.card-body .about{
-    padding: 1rem;
-}
-.about .center {
-    text-align: center;
+
+/* Change the mouse cursor to a pointer
+   when hovered over */
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward {
+  cursor: pointer;
 }
