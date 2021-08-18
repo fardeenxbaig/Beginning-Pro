@@ -196,6 +196,7 @@ input, select, textarea {
 			width: max-content;
 			padding-bottom: 0.5rem;
 			margin: 0 0 2rem 0;
+			text-align: center;
 		}
 
 	h1 {
@@ -1666,6 +1667,7 @@ input, select, textarea {
 {
 	font-family: 'Almarai', sans-serif;
 	text-align: center;
+	text-decoration-style: solid;
 }
 
 .video-container {
