@@ -1703,7 +1703,7 @@ input, select, textarea {
 }
 
 
-.nanlogo {
+.newlogo {
     width: auto;
     height: auto;
     float: none;
@@ -1713,13 +1713,13 @@ input, select, textarea {
     display: none;
   }
 
-div.nanlogo{
+div.newlogo{
 margin: 0 auto;
 width: 250px;
 }
 }
 
-.nanlogo {
+.newlogo {
   width: auto;
   height: auto;
   float:left;
